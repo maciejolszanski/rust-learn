@@ -37,4 +37,33 @@ fn main() {
     println!("c is {number:.3}", number=c); 
     println!("c is {c:.3}"); //captures variable c from local scope
 
+
+    // bitwise operations
+    let mut value = 0b1111_0101u8;
+    println!("value is {value}"); // 245
+    println!("value is {value:08b}"); // 11110101
+
+    value = !value;
+    println!("value is {value:08b}"); // 00001010
+
+    // AND is used to clear one bit where the zero is placed
+    // or to check if specified bit is 1 or 0
+    value = value & 0b1111_0111; 
+    println!("value is {value:08b}"); // 00000010
+    println!("bit 6 is {}", value & 0b0100_0000); // 0
+
+    // OR is used to set specific bit to 1
+    value = value | 0b0100_0000; 
+    println!("value is {value:08b}"); // 01000010
+
+    // XOR to check where the values differ between two bit patterns
+    value = value ^ 0b0101_0101;
+    println!("value is {value:08b}"); // 00010111
+
+    // Bit shifting
+    value = value << 4;
+    println!("value is {value:08b}"); // 0111000
+    value = value >> 2;
+    println!("value is {value:08b}"); // 0001110
+
 }
