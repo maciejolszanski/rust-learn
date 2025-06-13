@@ -86,5 +86,37 @@ fn main() {
     let letter = 'a';
     let number = '1';
     let finger =  '\u{261D}'; // using hexadecimal unicode value
-    println!("{letter}\n{number}\n{finger}")
+    println!("{letter}\n{number}\n{finger}");
+
+    // Arrays
+    let mut letters = ['a', 'b', 'c'];
+    letters[0] = 'x';
+    let first_letter = letters[0];
+    println!("{first_letter}");
+
+    let numbers: [i32; 5]; // empty array
+    numbers = [0; 5]; // array of 5 copies of a value 0
+    let index: usize = numbers.len(); // usize is based on a number of bytes needed to reference memory
+    //println!("Last number is {}", numbers[index]); // will compile but panic during runtime
+
+    // Multi-dimensional arrays
+    let parking_lot = [[1,2,3],
+                                      [4,5,6]];
+    let number = parking_lot[0][1];
+    println!("{number}");
+
+    // inner arrays must be the same size - if not they are treated like different types
+    // let parking_lot = [[1,2,3],
+    //                    [4,5,6,7]]; // will panick
+
+    let garage: [[[i32; 100]; 20]; 5];
+
+    // Tuples
+    let mut stuff: (u8, f32, char) = (10, 3.14, 'x');
+    stuff.0 += 3;
+    let first_item = stuff.0;
+    println!("first tuple item is {first_item}");
+
+    let (a, b, c) = stuff;
+    println!("b is {b}")
 }
