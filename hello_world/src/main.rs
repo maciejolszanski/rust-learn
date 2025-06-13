@@ -66,4 +66,19 @@ fn main() {
     value = value >> 2;
     println!("value is {value:08b}"); // 0001110
 
+
+    // Boolean
+    /*  
+    We can short-circuit logical operations
+    false & <anything> -> false
+    true | <anything>  -> true
+
+    so when we use && or || the right sight will not even be evaluated if the left side is 
+    false for && 
+    true for ||
+    */
+    let c = (false & true) && panic!(); // will not panic
+    println!("c is {c}");
+    //let c = (false & true) || panic!(); // will panic
+
 }
