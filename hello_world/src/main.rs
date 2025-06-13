@@ -81,4 +81,10 @@ fn main() {
     println!("c is {c}");
     //let c = (false & true) || panic!(); // will panic
 
+
+    // Char
+    let letter = 'a';
+    let number = '1';
+    let finger =  '\u{261D}'; // using hexadecimal unicode value
+    println!("{letter}\n{number}\n{finger}")
 }
